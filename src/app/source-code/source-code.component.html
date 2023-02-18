@@ -1,0 +1,10 @@
+<div class="code-container">
+    <nav>
+        <button (click)="showContent()" [disabled]="showCode" class="button-code">HTML</button>
+        <button (click)="showContent()" [disabled]="!showCode" class="button-code">TypeScript</button>
+    </nav>
+    <div class="content">
+        <pre><code *ngIf="showCode" class="html" [highlight]="htmlSource"></code></pre>
+        <pre><code *ngIf="!showCode" class="typescript" [highlight]="tsSource"></code></pre>
+    </div>
+</div>

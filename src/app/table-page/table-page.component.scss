@@ -1,0 +1,24 @@
+.page-container {
+    margin-left: 1%;
+    margin-right: 1%;
+    margin-top: 1%;
+}
+
+.scratch-table {
+    width: 100%;
+    border: 1px solid black;
+
+    th {
+        font-size: x-large;
+        font-weight: bold;
+        border: 1px solid black;
+    }
+
+    td {
+        padding-left: 7.5px;
+        padding-right: 7.5px;
+        height: 40px;
+        border: 1px solid black;
+        font-size: large;
+    }
+}

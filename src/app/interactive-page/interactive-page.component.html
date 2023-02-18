@@ -1,0 +1,78 @@
+<div class="page-container">
+    <form>
+        <fieldset class="fieldset-container">
+            <legend>Build your pizza</legend>
+            <p class="item-title">Which flour do you want for your pizza?</p>
+
+            <mat-radio-group aria-label="Select an option">
+                <mat-radio-button (click)="selectFlour($event)" id="wheat" name="flour" value="Whole wheat"
+                    color="primary">Whole wheat</mat-radio-button>
+                <mat-radio-button (click)="selectFlour($event)" id="kamut" name="flour" value="Kamut"
+                    color="primary">Kamut</mat-radio-button>
+                <mat-radio-button (click)="selectFlour($event)" id="fiveCereals" name="flour" value="5 Cereals"
+                    color="primary">5 Cereals</mat-radio-button>
+            </mat-radio-group>
+
+            <p class="item-title">Which pizza base do you want to use?</p>
+            <mat-form-field appearance="fill">
+                <mat-label>Pizza</mat-label>
+                <mat-select (selectionChange)="selectBase($event)" name="pizzaType" id="base">
+                    <mat-option *ngFor="let pizza of pizzaBases" [value]="pizza">
+                        {{pizza}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+
+
+            <p class="item-title">Which sauce do you prefer?</p>
+            <mat-form-field appearance="fill">
+                <mat-label>Sauce</mat-label>
+                <mat-select (selectionChange)="selectSauce($event)" name="sauceType" id="sauce">
+                    <mat-option *ngFor="let sauce of sauces" [value]="sauce">
+                        {{sauce}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+
+            <p class="item-title">Would you like some extra toppings?</p>
+            <span>
+                <mat-checkbox color="primary" (change)="checkedTopping($event)" id="fries" name="toppings"
+                    value="Fries">Fries</mat-checkbox>
+            </span>
+            <span>
+                <mat-checkbox color="primary" (change)="checkedTopping($event)" id="olives" name="toppings"
+                    value="Olives">Olives</mat-checkbox>
+            </span>
+            <span>
+                <mat-checkbox color="primary" (change)="checkedTopping($event)" id="peppers" name="toppings"
+                    value="Peppers">Peppers</mat-checkbox>
+            </span>
+            <span>
+                <mat-checkbox color="primary" (change)="checkedTopping($event)" id="spicySalami" name="toppings"
+                    value="Spicy salami">Spicy salami</mat-checkbox>
+            </span>
+
+            <div>
+                <p class="item-title">Would you like to have cheese inside the crust?</p>
+                <mat-radio-group aria-label="Select an option">
+                    <mat-radio-button (click)="selectCheese($event)" id="cheesInCrust" name="cheese" value="Yes"
+                        color="primary">Yes</mat-radio-button>
+                    <mat-radio-button (click)="selectFlour($event)" id="cheeseInCrust" name="cheese" value="No"
+                        color="primary" checked>No</mat-radio-button>
+                </mat-radio-group>
+            </div>
+
+            <button mat-raised-button color="primary" type="submit" class="send-order-button"
+                (click)="buildFinalPizza()">Send your order</button>
+            <button mat-raised-button color="primary" type="button" class="send-order-button"
+                (click)="resetFinalPizza()">Clear</button>
+        </fieldset>
+    </form>
+    <form>
+        <fieldset class="fieldset-container">
+            <legend>Your pizza</legend>
+            <p>{{finalPizza}}</p>
+        </fieldset>
+    </form>
+    <app-source-code [sources]='sourceNames'></app-source-code>
+</div>

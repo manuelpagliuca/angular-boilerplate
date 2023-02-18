@@ -1,0 +1,38 @@
+<div class="page-container">
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        <ng-container matColumnDef="id">
+            <th mat-header-cell *matHeaderCellDef> ID </th>
+            <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="pizza">
+            <th mat-header-cell *matHeaderCellDef> Pizza </th>
+            <td mat-cell *matCellDef="let element"> {{element.pizza}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="flour">
+            <th mat-header-cell *matHeaderCellDef> Flour </th>
+            <td mat-cell *matCellDef="let element"> {{element.flour}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="sauce">
+            <th mat-header-cell *matHeaderCellDef> Sauce </th>
+            <td mat-cell *matCellDef="let element"> {{element.sauce}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="toppings">
+            <th mat-header-cell *matHeaderCellDef> Toppings </th>
+            <td mat-cell *matCellDef="let element"> {{element.toppings}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="stuffed crust">
+            <th mat-header-cell *matHeaderCellDef> Stuffed crust </th>
+            <td mat-cell *matCellDef="let element"> {{element.stuffedCrust}} </td>
+        </ng-container>
+
+
+    </table>
+    <app-source-code [sources]='sourceFiles'></app-source-code>
+</div>
