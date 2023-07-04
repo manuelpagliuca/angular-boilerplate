@@ -1,4 +1,4 @@
-# Angular Boilerplate App
+# Angular Boilerplate App 🍕
 ![Unity](https://img.shields.io/badge/build-passing-green)
 ![Unity](https://img.shields.io/badge/license-MIT-yellowgreen)
 ![Unity](https://img.shields.io/badge/Framework-Angular-red)
